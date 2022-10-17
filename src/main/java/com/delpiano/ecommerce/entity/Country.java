@@ -1,5 +1,6 @@
 package com.delpiano.ecommerce.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-
+// country entity mapped from teh database for the credit card form
 @Entity
 @Table(name = "country")
 @Getter
@@ -25,5 +26,7 @@ public class Country {
   @Column(name = "name")
   private  String name;
   @OneToMany(mappedBy = "country")
+  //will ignore the states
+  @JsonIgnore
   private List<State> states;
 }

@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Data;
 
-
+// state entity mapped from teh database for the credit card form
 @Entity
 @Data
 @Table(name = "state")
@@ -21,7 +21,6 @@ public class State {
   private int id;
   @Column(name = "name")
   private String name;
-  @Column(name = "country")
   @ManyToOne
   @JoinColumn(name = "country_id")
   private Country country;
